@@ -1,0 +1,69 @@
+/*
+synaxe css
+
+selector {
+    vlastnost1: hodnota;
+    vlastnost2: hodnota;
+    vlastnost3: hodnota;
+    ...
+} 
+
+*/
+
+body{
+    background-color: #c5f3f3;
+    border-color: violet;
+}
+
+h1{
+    color: navy;
+    font-size: 30px;
+    font: Arial, Helvetica, sans-serif;
+}
+h2{
+    color:blueviolet;
+}
+.page-wrapper{
+    color:blueviolet;
+    max-width: 80%;
+    font-size: 18px;
+    margin: 0 auto;    /*zarovnání na střed díky 0 auto !!!*/
+    background-color: whitesmoke;
+    padding: 20px;   /*okraje musi byt backround color*/
+
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+}
+
+nav a {              /*pouze a řádky ktere jsou vv navigaci musim napsat nav a*/
+    background-color: #be8abe;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+nav a:hover {
+    background-color: black;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    /*grid-template-columns: repeat(autofill, minimum (250px, 1fr));*/
+    gap: 10px;
+
+}
+
+.card {
+    background-color: blanchedalmond;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
