@@ -20,11 +20,12 @@
                     <a href="#buttons">tlačítka</a>
                     <a href="#cards">karty</a>
                     <a href="#tables">tabulky</a>
+                    <a href="#form">formulář</a>
                  </ul>
              </div>
         </div>
     </nav>
-    <header>
+    <header class="ps-4">
         <h1>Vítejte na stránce bootstrapu</h1>
         <p>budu zde prezentovat vybrané komponenty</p>
         <a href="#buttons" class="btn btn-warning btn-lg">Začít</a>
@@ -62,7 +63,8 @@
         <div class="card-body">
             <h3 class="card-title">ukázková karta</h3>
             <p class="card-text">ukazkova karta v bootstrapu</p>
-            <a href="#" class="btn btn-info">více</a>
+            <a href="#" class="btn btn-info" id="showAlertBtn">více</a>
+
         </div>
     </div>
    
@@ -80,6 +82,19 @@
 
     </pre>
  </section>
+
+  <!--alert-->
+  <section>
+    <div id="successAlert" class="alert alert-success alert-dismissible fade mt-4 d-none" role="alert">
+        <h4 class="alert-heading">Dobrá práce</h4>
+        <p>Povedlo se ti zmáčknout tlačítko více. :/</p>
+        <hr>
+        <p class="mb-0">Zatím pro tebe nemáme více informací, ale jakmile se naskytnou, budeme rádi když si je přečteš.</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Zavřít"></button>
+    </div>
+    
+
+</section>
     <!--tabulky-->
     <section class="container mt-4" id="tables">
     <h2>Tabulky</h2>
@@ -136,11 +151,42 @@
         &lt;/code>
 
     </pre>
-    </section>
+
+ <section class="fw-bold">
+<h5>Pro více informací odebírejte naši e-mailovou poštu</h5>
+</section>   
+    <form class="border border-primary p-3 rounded" id="form">
+        
+        <div class="container mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Váš email je jen Váš, a teď i náš, ale mi to nikomu neřeknem.</div>
+        </div>
+        <div class="mb-3 ">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+
+
+
     
-    
-    
-    
+    <script>
+        document.getElementById("showAlertBtn").addEventListener("click", function (event) {
+            event.preventDefault(); // Zabrání přesměrování při kliknutí na <a>
+            let alertBox = document.getElementById("successAlert");
+            alertBox.classList.remove("d-none"); // Zobrazí alert
+            alertBox.classList.add("show"); // Přidá Bootstrap efekt
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
