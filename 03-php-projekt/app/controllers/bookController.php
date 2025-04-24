@@ -38,14 +38,7 @@ class BookController {
                 }
             }
 
-            // Uložení knihy do DB
-            // if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
-            //     header("Location: /public/books_list.php");
-            //     exit();
-            // } else {
-            //     echo "Chyba při ukládání knihy.";
-            // }
-
+            
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
             if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
                 header("Location: /03-php-projekt/app/views/books/book_create.php");
@@ -54,6 +47,10 @@ class BookController {
                 echo "Chyba při ukládání knihy.";
             }
         }
+    }
+    public function listBooks () {
+        $books = $this->bookModel->getAll();
+        include '../views/books/book_list.php';
     }
 }
 
